@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Package {
+  id               String      @id @default(cuid())
+  slug             String      @unique
+  title            String
+  tagline          String
+  destination      String
+  region           String      // Garhwal, Kumaon, Char Dham, etc.
+  categorySlug     String      // uttarakhand-char-dham, treks, etc.
+  durationDays     Int
+  durationNights   Int
+  price            Int
+  originalPrice    Int
+  rating           Float       @default(4.9)
+  reviewCount      Int         @default(42)
+  featured         Boolean     @default(false)
+  bestseller       Boolean     @default(false)
+  coverImage       String
+  gallery          String      // JSON string array of URLs
+  highlights       String      // JSON string array
+  inclusions       String      // JSON string array
+  exclusions       String      // JSON string array
+  itinerary        String      // JSON array of { day: number, title: string, description: string, meals: string, stay: string }
+  faqs             String      // JSON array of { question: string, answer: string }
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+  inquiries        Inquiry[]
+}
+
+model Destination {
+  id               String      @id @default(cuid())
+  slug             String      @unique
+  name             String
+  tagline          String
+  description      String
+  coverImage       String
+  bestTimeToVisit  String
+  altitude         String
+  district         String
+  division         String      // Garhwal or Kumaon
+  coordinates      String      // JSON { lat: number, lng: number }
+  popularFor       String      // JSON string array
+  createdAt        DateTime    @default(now())
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+}
+
+model Inquiry {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String
+  destination String?
+  travelDate  String?
+  travelers   Int      @default(2)
+  message     String?
+  packageId   String?
+  package     Package? @relation(fields: [packageId], references: [id])
+  status      String   @default("NEW") // NEW, CONTACTED, QUOTED, CLOSED
+  createdAt   DateTime @default(now())
+}
+
+model Subscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model BlogPost {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  excerpt     String
+  content     String
+  coverImage  String
+  author      String
+  publishedAt DateTime @default(now())
+  readTime    String
+  tags        String   // JSON string array
+}
+
