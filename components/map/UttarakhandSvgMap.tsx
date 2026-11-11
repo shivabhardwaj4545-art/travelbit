@@ -92,29 +92,29 @@ export function UttarakhandSvgMap() {
           </p>
         </div>
 
-        {/* View Toggle: Circuits vs Districts */}
-        <div className="flex items-center bg-gray-100 p-1 rounded-2xl self-start lg:self-auto">
-          <button
-            onClick={() => setActiveTab("circuits")}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-              activeTab === "circuits"
-                ? "bg-brand-forest text-white shadow-md"
-                : "text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            Yatra Circuits View
-          </button>
-          <button
-            onClick={() => setActiveTab("districts")}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-              activeTab === "districts"
-                ? "bg-brand-forest text-white shadow-md"
-                : "text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            13 Districts View
-          </button>
-        </div>
+      {/* View Toggle: Circuits vs Districts */}
+      <div className="flex flex-wrap items-center bg-gray-100 p-1 rounded-2xl gap-1 self-start lg:self-auto">
+        <button
+          onClick={() => setActiveTab("circuits")}
+          className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all text-center ${
+            activeTab === "circuits"
+              ? "bg-brand-forest text-white shadow-md"
+              : "text-gray-600 hover:text-gray-900"
+          }`}
+        >
+          Yatra Circuits View
+        </button>
+        <button
+          onClick={() => setActiveTab("districts")}
+          className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all text-center ${
+            activeTab === "districts"
+              ? "bg-brand-forest text-white shadow-md"
+              : "text-gray-600 hover:text-gray-900"
+          }`}
+        >
+          13 Districts View
+        </button>
+      </div>
       </div>
 
       {/* Category Filter Pills */}

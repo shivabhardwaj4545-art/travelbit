@@ -254,8 +254,8 @@ export function Navbar({ onOpenInquiry }: NavbarProps) {
 
       {/* Mobile Drawer Offcanvas */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[108px] z-50 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white h-full max-w-sm w-full p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
+        <div className="lg:hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200 flex justify-end">
+          <div className="bg-white h-full max-w-xs sm:max-w-sm w-full p-5 sm:p-6 shadow-2xl flex flex-col justify-between overflow-y-auto animate-in slide-in-from-right duration-200">
             <div className="space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-gray-100">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
@@ -264,6 +264,7 @@ export function Navbar({ onOpenInquiry }: NavbarProps) {
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-1 rounded-md text-gray-400 hover:text-gray-600"
+                  aria-label="Close menu"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -297,7 +298,7 @@ export function Navbar({ onOpenInquiry }: NavbarProps) {
 
                 <a
                   href="tel:18008890379"
-                  className="w-full flex items-center justify-center gap-2 bg-brand-forest text-white py-3 rounded-xl font-bold hover:bg-brand-forest-light transition-colors"
+                  className="w-full flex items-center justify-center gap-2 bg-brand-forest text-white py-3 rounded-xl font-bold hover:bg-brand-forest-light transition-colors text-xs sm:text-sm"
                 >
                   <PhoneCall className="w-4 h-4 text-brand-orange" />
                   <span>Call Toll-Free 1800-8890-379</span>

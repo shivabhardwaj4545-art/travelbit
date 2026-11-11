@@ -72,8 +72,8 @@ export function CompareDrawer({ onOpenInquiry }: CompareDrawerProps) {
             </div>
 
             {/* Comparison Cards Content */}
-            <div className="p-6 overflow-x-auto overflow-y-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 min-w-[600px]">
+            <div className="p-4 sm:p-6 overflow-x-auto overflow-y-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 min-w-0 md:min-w-[600px]">
                 {items.map((pkg) => (
                   <div
                     key={pkg.id}

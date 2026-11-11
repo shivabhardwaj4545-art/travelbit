@@ -81,25 +81,26 @@ export function InquiryModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl relative animate-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 animate-in fade-in duration-200">
+      <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl relative animate-in zoom-in-95 duration-200 my-auto">
         {/* Modal Top Header */}
-        <div className="bg-gradient-to-r from-brand-forest to-[#144737] text-white p-6 relative">
+        <div className="bg-gradient-to-r from-brand-forest to-[#144737] text-white p-5 sm:p-6 relative">
           <button
             onClick={() => {
               reset();
               setIsSuccess(false);
               onClose();
             }}
-            className="absolute top-5 right-5 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors"
+            className="absolute top-4 right-4 sm:top-5 sm:right-5 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors"
+            aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
-          <div className="flex items-center gap-2 text-brand-orange text-xs font-bold uppercase tracking-wider mb-1">
-            <Sparkles className="w-4 h-4" />
+          <div className="flex items-center gap-2 text-brand-orange text-xs font-bold uppercase tracking-wider mb-1 pr-6">
+            <Sparkles className="w-4 h-4 shrink-0" />
             <span>Instant Free Quote — Save Up To 30%</span>
           </div>
-          <h3 className="font-heading font-extrabold text-2xl text-white">
+          <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-white">
             Plan Your Yatra
           </h3>
           <p className="text-xs text-white/80 mt-1">
@@ -108,7 +109,7 @@ export function InquiryModal({
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 max-h-[75vh] overflow-y-auto">
+        <div className="p-4 sm:p-6 max-h-[80vh] sm:max-h-[75vh] overflow-y-auto">
           {isSuccess ? (
             <div className="text-center py-8 space-y-4">
               <div className="w-16 h-16 bg-brand-green/20 text-brand-green rounded-full flex items-center justify-center mx-auto">
@@ -186,6 +187,7 @@ export function InquiryModal({
                   </label>
                   <input
                     type="tel"
+                    inputMode="tel"
                     placeholder="e.g. 9876543210"
                     {...register("phone")}
                     className={`w-full px-4 py-2.5 rounded-xl border text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-green ${
