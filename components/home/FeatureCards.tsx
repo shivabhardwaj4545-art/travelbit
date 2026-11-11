@@ -62,13 +62,13 @@ export function FeatureCards() {
         </div>
 
         {/* Trust-Score Bar */}
-        <div className="mt-10 bg-brand-forest text-white rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-          <div className="flex items-center gap-4">
+        <div className="mt-10 bg-brand-forest text-white rounded-3xl p-5 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
             <div className="w-14 h-14 rounded-2xl bg-brand-orange text-white flex items-center justify-center font-heading font-extrabold text-2xl shrink-0 shadow-md">
               4.9
             </div>
             <div>
-              <div className="flex items-center gap-1 text-brand-orange mb-1">
+              <div className="flex items-center justify-center sm:justify-start gap-1 text-brand-orange mb-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-brand-orange" />
                 ))}
@@ -76,26 +76,24 @@ export function FeatureCards() {
                   Overall TrustScore
                 </span>
               </div>
-              <p className="text-xs text-white/70">
+              <p className="text-xs text-white/70 max-w-sm">
                 Calculated from 1,089+ verified pilgrim and traveler feedback submissions.
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-6 text-xs text-white/90">
-            <div className="text-center">
-              <span className="block font-heading font-bold text-lg text-white">99.4%</span>
-              <span className="text-white/60">Darshan Assistance</span>
+          <div className="grid grid-cols-3 gap-2 sm:gap-6 text-xs text-white/90 w-full sm:w-auto pt-4 sm:pt-0 border-t sm:border-t-0 border-white/10">
+            <div className="text-center px-1">
+              <span className="block font-heading font-bold text-base sm:text-lg text-white">99.4%</span>
+              <span className="text-[10px] sm:text-xs text-white/60 leading-tight block">Darshan Assistance</span>
             </div>
-            <div className="w-px h-8 bg-white/20" />
-            <div className="text-center">
-              <span className="block font-heading font-bold text-lg text-white">100%</span>
-              <span className="text-white/60">Verified Vehicles</span>
+            <div className="text-center px-1 border-x border-white/10 sm:border-x-0">
+              <span className="block font-heading font-bold text-base sm:text-lg text-white">100%</span>
+              <span className="text-[10px] sm:text-xs text-white/60 leading-tight block">Verified Vehicles</span>
             </div>
-            <div className="w-px h-8 bg-white/20" />
-            <div className="text-center">
-              <span className="block font-heading font-bold text-lg text-white">24/7</span>
-              <span className="text-white/60">Live Helplines</span>
+            <div className="text-center px-1">
+              <span className="block font-heading font-bold text-base sm:text-lg text-white">24/7</span>
+              <span className="text-[10px] sm:text-xs text-white/60 leading-tight block">Live Helplines</span>
             </div>
           </div>
         </div>

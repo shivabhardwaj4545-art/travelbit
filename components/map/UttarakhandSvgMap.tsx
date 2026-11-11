@@ -136,12 +136,12 @@ export function UttarakhandSvgMap() {
       </div>
 
       {/* Main Map + Detail Card Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mt-2">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start mt-2">
         {/* Left: SVG Map Rendering */}
-        <div className="lg:col-span-8 relative bg-gradient-to-br from-emerald-50/40 via-white to-amber-50/30 rounded-2xl p-4 border border-emerald-900/10">
+        <div className="lg:col-span-8 relative bg-gradient-to-br from-emerald-50/40 via-white to-amber-50/30 rounded-2xl p-2 sm:p-4 border border-emerald-900/10 overflow-hidden">
           <svg
             viewBox={`0 0 ${width} ${height}`}
-            className="w-full h-auto max-h-[520px] select-none"
+            className="w-full h-auto max-h-[480px] select-none block"
           >
             <defs>
               <filter id="mapShadow" x="-5%" y="-5%" width="115%" height="115%">

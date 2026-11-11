@@ -10,10 +10,17 @@
   --font-playfair: 'Playfair Display', Georgia, serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 @layer base {
   body {
     @apply bg-brand-cream text-brand-dark antialiased font-sans selection:bg-brand-green/20 selection:text-brand-forest;
     overflow-x: hidden;
+    width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {

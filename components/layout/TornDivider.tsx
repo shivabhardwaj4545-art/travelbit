@@ -17,7 +17,7 @@ export function TornDivider({
   return (
     <div
       className={cn(
-        "w-full overflow-hidden leading-none pointer-events-none select-none z-10",
+        "w-full overflow-hidden leading-none pointer-events-none select-none z-10 max-w-full",
         isTop ? "transform rotate-180" : "",
         className
       )}
